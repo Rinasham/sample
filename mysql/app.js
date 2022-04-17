@@ -15,7 +15,7 @@ const con = mysql.createConnection({
   database: 'express_testDB'
 })
 
-// const dbtest =  () =>{
+
 
   con.connect(function(err) {
     if (err) throw err;
@@ -52,7 +52,7 @@ app.get("/", (req, res, next) => {
   console.log('getルーター');
 	(async () => {
 		const test = await dbtest();
-		console.log(`${test} testの中身`);//undefinedになる
+		console.log(`${test} testの中身`);
 		res.send(test);
 	})()
   .catch(next);
